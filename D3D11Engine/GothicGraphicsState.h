@@ -572,7 +572,7 @@ struct GothicRendererSettings
 		SortRenderQueue = true;
 		DrawThreaded = true;
 
-		EnableTesselation = true;
+		EnableTesselation = false;
 		AllowWorldMeshTesselation = false;
 		TesselationFrustumCulling = true;
 		EnablePointlightShadows = PLS_UPDATE_DYNAMIC;
