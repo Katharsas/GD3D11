@@ -48,7 +48,6 @@ struct ViewportInfo
 };
 
 class zCTexture;
-class BaseShadowedPointLight;
 
 /** Base graphics engine */
 class BaseGraphicsEngine
@@ -94,7 +93,7 @@ public:
 	virtual XRESULT CreateConstantBuffer(D3D11ConstantBuffer** outCB, void* data, int size) = 0;
 
 	/** Creates a bufferobject for a shadowed point light */
-	virtual XRESULT CreateShadowedPointLight(BaseShadowedPointLight** outPL, VobLightInfo* lightInfo, bool dynamic = false){return XR_SUCCESS;}
+	virtual XRESULT CreateShadowedPointLight(D3D11PointLight** outPL, VobLightInfo* lightInfo, bool dynamic = false){return XR_SUCCESS;}
 
 	/** Returns a list of available display modes */
 	virtual XRESULT GetDisplayModeList(std::vector<DisplayModeInfo>* modeList, bool includeSuperSampling = false) = 0;

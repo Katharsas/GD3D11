@@ -6,7 +6,6 @@
 #include "zTypes.h"
 #include "ConstantBufferStructs.h"
 #include "zCPolygon.h"
-#include "BaseShadowedPointLight.h"
 #include "D3D11VertexBuffer.h"
 
 class zCMaterial;
@@ -377,7 +376,7 @@ struct VobInfo : public BaseVobInfo
 };
 
 class zCVobLight;
-class BaseShadowedPointLight;
+class D3D11PointLight;
 struct VobLightInfo
 {
 	VobLightInfo()
@@ -390,10 +389,7 @@ struct VobLightInfo
 		UpdateShadows = true;
 	}
 
-	~VobLightInfo()
-	{
-		delete LightShadowBuffers;
-	}
+	~VobLightInfo();
 
 	/** Vob the data came from */
 	zCVobLight* Vob;
@@ -408,7 +404,7 @@ struct VobLightInfo
 	std::vector<BspInfo*> ParentBSPNodes;
 
 	/** Buffers for doing shadows on this light */
-	BaseShadowedPointLight* LightShadowBuffers;
+	D3D11PointLight* LightShadowBuffers;
 	bool DynamicShadows; // Whether this light should be able to have dynamic shadows
 	bool UpdateShadows; // Whether to update this lights shadows on the next occasion
 

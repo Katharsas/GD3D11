@@ -1,18 +1,18 @@
 #pragma once
-#include "BaseShadowedPointLight.h"
 #include "WorldConverter.h"
 #include <thread>
 #include <condition_variable>
 
 class D3D11PointLight;
-
+struct BaseVobInfo;
 struct VobLightInfo;
 struct RenderToDepthStencilBuffer;
 struct RenderToTextureBuffer;
 struct VobInfo;
 struct SkeletalVobInfo;
+
 class D3D11ConstantBuffer;
-class D3D11PointLight : public BaseShadowedPointLight
+class D3D11PointLight
 {
 public:
 	D3D11PointLight(VobLightInfo* info, bool dynamicLight = false);

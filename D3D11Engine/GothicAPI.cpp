@@ -18,6 +18,7 @@
 #include "zCParticleFX.h"
 #include "GSky.h"
 #include "GInventory.h"
+#include "D3D11PointLight.h"
 
 #define DIRECTINPUT_VERSION 0x0700
 #include <dinput.h>

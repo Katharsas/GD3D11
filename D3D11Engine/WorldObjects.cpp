@@ -6,6 +6,11 @@
 #include "zCVob.h"
 #include "zCMaterial.h"
 #include "zCTexture.h"
+#include "D3D11PointLight.h"
+
+VobLightInfo::~VobLightInfo() {
+	delete LightShadowBuffers;
+}
 
 const int WORLDMESHINFO_VERSION = 5;
 const int VISUALINFO_VERSION = 5;
